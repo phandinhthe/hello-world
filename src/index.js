@@ -1,7 +1,12 @@
+'use strict'
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
+import ClockClass from './Clock'
+import Toggle from './Toggle'
+import Map from './map'
 
 function formatName(user) {
   return user.firstName + ' ' + user.lastName;
@@ -69,3 +74,52 @@ ReactDOM.render(
   welcomeElement,
   document.getElementById('root5')
 );
+
+// State and lifecycle
+function Clock(props) {
+  return (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {props.date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+}
+
+function tick2() {
+  ReactDOM.render(
+    <Clock date={new Date()}/>,
+    document.getElementById('root6')
+  )
+};
+setInterval(tick2, 1000);
+
+ReactDOM.render(
+  <ClockClass />,
+  document.getElementById('root7')
+)
+
+// Handling Event
+ReactDOM.render(
+  <Toggle />,
+  document.getElementById('root8')
+)
+
+// Conditional Rendering
+function UserGreeting(props) {
+  return <h1>Welcome back!</h1>;
+}
+
+function GuestGreeting(props) {
+  return <h1>Please sign up!</h1>
+}
+
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  return isLoggedIn ? <UserGreeting /> : <GuestGreeting />;
+}
+
+ReactDOM.render(
+  //<Greeting isLoggedIn={true}/>,
+  <Map />,
+  document.getElementById('root9')
+)
