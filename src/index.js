@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import App from './App';
-import Welcome from './Welcome'
-import Clock from './Clock'
-import Toggle from './Toggle'
-import Greeting from './Greeting'
-import NameForm from './NameForm'
+import Welcome from './Welcome';
+import Clock from './Clock';
+import Toggle from './Toggle';
+import Greeting from './Greeting';
+import NameForm from './NameForm';
+import Routes from './routes';
 
 import './index.css';
 
@@ -38,7 +40,12 @@ const user = {
 //   document.getElementById('root')
 // )
 
+// ReactDOM.render(
+//   <NameForm />,
+//   document.getElementById('root')
+// )
+
 ReactDOM.render(
-  <NameForm />,
+  <Routes/>,
   document.getElementById('root')
-)
+);
