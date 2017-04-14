@@ -10,6 +10,8 @@ import NameForm   from './components/Form/NameForm';
 import About      from './components/About';
 import NotFound   from './components/NotFound';
 import ListAndKey from './components/ListAndKey/ListAndKey';
+import Calculator from './components/LiftingStateUp/LiftingStateUp';
+import FilterableProductTable from './components/FilterableProductTable/FilterableProductTable';
 
 const Routes = function() {
   return (
@@ -24,6 +26,8 @@ const Routes = function() {
           <li><Link to="/greeting">Greeting</Link></li>
           <li><Link to="/nameForm">NameForm</Link></li>
           <li><Link to="/listAndKey">ListAndKey</Link></li>
+          <li><Link to="/calculator">Calculator</Link></li>
+          <li><Link to="/filterableProductTable">FilterableProductTable</Link></li>
         </ul>
 
         <hr/>
@@ -36,10 +40,12 @@ const Routes = function() {
           <Route path="/greeting" component={Greeting}/>
           <Route path="/nameForm" component={NameForm}/>
           <Route path="/listAndKey" component={ListAndKey}/>
+          <Route path="/calculator" component={Calculator} />
+          <Route path="/filterableProductTable" component={FilterableProductTable} />
           <Route component={NotFound}/>
         </Switch>
       </div>
-      </BrowserRouter>
+    </BrowserRouter>
   )
 
 }
